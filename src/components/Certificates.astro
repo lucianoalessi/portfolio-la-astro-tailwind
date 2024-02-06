@@ -1,0 +1,56 @@
+---
+import CertificateItem from "./CertificateItem.astro"
+
+const CERTIFICATES = [
+
+  {
+    date: "2023",
+    title: "Backend Programming",
+    institution: "Coder House",
+    description: "Completed a comprehensive 7-month backend development program. Gained proficiency in Node.js, Express.js, MongoDB, APIs and more.",
+    link: "https://www.coderhouse.com/certificates/65a57e8abfa111a68da098fd?lang=en",
+    image: "/certificates/backend-certificate2.webp",
+  },
+  {
+    date: "2023",
+    title: "Front End Development Libraries",
+    institution: "freeCodeCamp",
+    description: "Representing approximately 300 hours of work on challenges and projects.",
+    link: "https://www.freecodecamp.org/certification/LucianoAlessi9/front-end-development-libraries",
+    image: "/certificates/frontend-certificate2.webp",
+  },
+  {
+    date: "2023",
+    title: "JavaScript Algorithms and Data Structures",
+    institution: "freeCodeCamp",
+    description: "Representing approximately 300 hours of work on challenges and projects.",
+    link: "https://www.freecodecamp.org/certification/LucianoAlessi9/javascript-algorithms-and-data-structures",
+    image: "/certificates/JS-certificate2.webp",
+  },
+  {
+    date: "2021",
+    title: "Industrial Engineer",
+    institution: "Universidad Tecnologica Nacional (UTN) of Argentina.",
+    description: "Degree: 8 (Eight).",
+    link: "/certificates/industrialEngineer-certificate.webp",
+    image: "/certificates/industrialEngineer-certificate2.webp",
+  },
+  {
+    date: "2014",
+    title: "Avionic Technician",
+    institution: "Escuela de Educación Secundaria Tecnica Nº7 (T.R.Q) (IMPA).",
+    description: "Programming, Electronics, Telecommunications and Aviation Instrumentation.",
+    link: "/certificates/avionicTechnician-certificate.webp",
+    image: "/certificates/avionicTechnician-certificate2.webp",
+  },
+]
+
+---
+
+<div class="flex flex-col gap-y-4 mb-20">
+  {
+    CERTIFICATES.map((certificate) => (
+      <CertificateItem {...certificate} />
+    ))
+  }
+</div>

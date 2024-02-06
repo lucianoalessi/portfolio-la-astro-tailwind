@@ -1,0 +1,160 @@
+---
+//Importacion de iconos
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import React from "./icons/React.astro"
+import Css from "./icons/Css.astro"
+import Bootstrap from "./icons/Bootstrap.astro"
+import Express from "./icons/Express.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import NodeJS from "./icons/NodeJS.astro"
+import SocketIO from "./icons/SocketIO.astro"
+import JWT from "./icons/Jwt.astro"
+
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  REACT: {
+    name: "React.js",
+    class: "bg-[#003159] text-white",
+    icon: React,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#7952B3] text-white",
+    icon: Bootstrap,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#2965F1] text-white",
+    icon: Css,
+  },
+  EXPRESS: {
+    name: "Express.js",
+    class: "bg-[#000000] text-white", // Negro con texto blanco
+    icon: Express,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-[#4DB33D] text-white", // Verde con texto blanco
+    icon: MongoDB,
+  },
+  NODEJS: {
+    name: "Node.js",
+    class: "bg-[#026E00] text-white", // Verde oscuro con texto blanco
+    icon: NodeJS,
+  },
+  SOCKETIO: {
+    name: "socket.io",
+    class: "bg-[#FFFFFF] text-black", // Blanco con texto negro
+    icon: SocketIO,
+  },
+  JWT: {
+    name: "JWT",
+    class: "bg-[#000099] text-white", // Azul oscuro con texto blanco
+    icon: JWT,
+  },
+}
+const PROJECTS = [
+  {
+    title: "LA Store - A complete ecommerce",
+    description:
+      //ENGLISH VERSION
+      "Interactive online store, with functionalities such as registration, login, viewing and managing products according to user type, sending emails, placing orders, and accessing a chat. The admin type user has additional functions such as user management, among others.",
+      //VERSIONES ESPAÑOL
+      // "Tienda en línea interactiva, con funcionalidades de registro, inicio de sesión, visualización y gestión de productos segun tipo de usuario, envio de mails, realización de pedidos y acceso a un chat. El usuario tipo admin tiene funciones adicionales como la gestión de usuarios, entre otras.",
+      //VERSIONES ANTERIORES
+      // "Tienda en línea interactiva, con funcionalidades de registro, inicio de sesión, visualización y gestión de productos segun tipo de usuario, realización de pedidos y acceso a un chat. El usuario tipo admin tiene funciones adicionales como la gestión de usuarios, entre otras. Este proyecto fue construido desde cero utilizando Express.js, MongoDB, Handlebars y Bootstrap.",
+    link: "https://la-store.up.railway.app/home",
+    github: "https://github.com/lucianoalessi/backEnd-ecommerce",
+    image: "/projects/proyecto1.webp",
+    tags: [TAGS.NODEJS, TAGS.EXPRESS, TAGS.SOCKETIO, TAGS.MONGODB, TAGS.BOOTSTRAP, TAGS.JWT],
+  },
+  {
+    title: "Drum Machine ",
+    description:
+      //ENGLISH VERSION
+      "Drum Machine is an interactive application that generates sounds and allows you to play some music.",
+      //VERSIONES ESPAÑOL
+      //"Drum Machine es una aplicación interactiva y dinámica creada desde cero con React Js Y CSS.",
+    link: "https://lucianoalessi.github.io/drum-machine/",
+    github: "https://github.com/lucianoalessi/drum-machine",
+    image: "/projects/proyecto2.webp",
+    tags: [TAGS.REACT, TAGS.CSS],
+  },
+  // {
+  //   title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+  //   description:
+  //     "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+  //   link: "https://adventjs.dev",
+  //   image: "/projects/adventjs.webp",
+  //   tags: [TAGS.NEXT, TAGS.TAILWIND],
+  // },
+]
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row flex-wrap mb-2 gap-x-2 gap-y-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Code
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Preview
+            </LinkButton>
+          )}
+        </footer>
+    </div>
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

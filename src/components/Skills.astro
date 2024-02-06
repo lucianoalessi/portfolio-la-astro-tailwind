@@ -1,0 +1,150 @@
+---
+//importacion de iconos
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import React from "./icons/React.astro"
+import Css from "./icons/Css.astro"
+import Bootstrap from "./icons/Bootstrap.astro"
+import Express from "./icons/Express.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import NodeJS from "./icons/NodeJS.astro"
+import JavaScript from "./icons/JavaScript.astro"
+import Python from "./icons/Python.astro"
+import SocketIO from "./icons/SocketIO.astro"
+import JWT from "./icons/Jwt.astro"
+import Swagger from "./icons/Swagger.astro"
+import HTML from "./icons/Html.astro"
+import CPP from "./icons/Cpp.astro"
+import AstroIcon from "./icons/AstroIcon.astro"
+import Postman from "./icons/Postman.astro"
+import Git from "./icons/Git.astro"
+
+const TAGS = {
+
+    HTML: {
+        name: "HTML",
+        class: "bg-[#E34F26] text-white",
+        icon: HTML,
+    },
+    CSS: {
+        name: "CSS",
+        class: "bg-[#2965F1] text-white",
+        icon: Css,
+    },
+        JAVASCRIPT: {
+        name: "JavaScript",
+        class: "bg-[#F0DB4F] text-black",
+        icon: JavaScript,
+    },
+    PYTHON: {
+        name: "Python",
+        class: "bg-[#3776AB] text-white", 
+        icon: Python,
+    },
+    CPP: {
+        name: "C++",
+        class: "bg-[#00599C] text-white",
+        icon: CPP,
+    },
+    NEXT: {
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: NextJS,
+    },
+    REACT: {
+        name: "React.js",
+        class: "bg-[#003159] text-white",
+        icon: React,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+    BOOTSTRAP: {
+        name: "Bootstrap",
+        class: "bg-[#7952B3] text-white",
+        icon: Bootstrap,
+    },
+    NODEJS: {
+        name: "Node.js",
+        class: "bg-[#026E00] text-white",
+        icon: NodeJS,
+    },
+    EXPRESS: {
+        name: "Express.js",
+        class: "bg-[#000000] text-white",
+        icon: Express,
+    },
+    MONGODB: {
+        name: "MongoDB",
+        class: "bg-[#4DB33D] text-white",
+        icon: MongoDB,
+    },
+    SOCKETIO: {
+        name: "socket.io",
+        class: "bg-[#FFFFFF] text-black",
+        icon: SocketIO,
+    },
+    ASTRO: {
+        name: "Astro",
+        class: "bg-[#6699cc] text-white",
+        icon: AstroIcon, 
+        
+    },
+    JWT: {
+        name: "JWT",
+        class: "bg-[#000099] text-white",
+        icon: JWT,
+    },
+    SWAGGER: {
+        name: "Swagger",
+        class: "bg-[#85EA2D] text-black",
+        icon: Swagger,
+    },
+    POSTMAN: {
+        name: "Postman",
+        class: "bg-[#FF6C37] text-white", 
+        icon: Postman, 
+    },
+    GIT: {
+        name: "Git",
+        class: "bg-[#F05032] text-white",
+        icon: Git, 
+    },
+};
+
+const SECTIONS = [
+    {
+        title: "Programming languages",
+        tags: [TAGS.JAVASCRIPT, TAGS.PYTHON, TAGS.CPP, TAGS.CSS, TAGS.HTML ],
+    },
+    {
+        title: "Tools & Frameworks",
+        tags: [TAGS.NODEJS, TAGS.EXPRESS, TAGS.MONGODB, TAGS.REACT, TAGS.BOOTSTRAP, TAGS.TAILWIND, TAGS.ASTRO, TAGS.SOCKETIO, TAGS.JWT, TAGS.SWAGGER, TAGS.POSTMAN, TAGS.GIT],
+    },
+]
+---
+
+<div class="flex flex-col gap-y-8">
+    {SECTIONS.map(({ title, tags }) => (
+        <article class="flex flex-col space-x-0 space-y-6 group md:flex-row md:space-x-6 md:space-y-0">
+            <div class="w-full md:w-1/2 md:max-w-lg">
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h3>
+                <div class="flex flex-wrap mt-2">
+                    <ul class="flex flex-row flex-wrap mb-2 gap-x-2 gap-y-2">
+                        {tags.map((tag) => (
+                            <li>
+                                <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 shadow-lg`}>
+                                    <tag.icon class="size-4" />
+                                    {tag.name}
+                                </span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </article>
+    ))}
+</div>
+

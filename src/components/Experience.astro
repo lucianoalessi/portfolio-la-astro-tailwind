@@ -1,0 +1,51 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Present",
+    title: "Web development",
+    company: "Freelance",
+    description:
+    // ENGLISH VERSION
+    "With a year of experience in the development of personal Backend projects, I have strengthened my programming and problem-solving skills. My most outstanding personal project is an e-commerce that I developed during my 'Backend Programming' course at CODERHOUSE. In addition, I have acquired competencies in Frontend development through courses at freeCodeCamp and self-taught learning, which allows me to have a comprehensive view of web development. My constant focus on learning and improvement has led me to explore new technologies and take on complex challenges in my projects.",
+    // VERSION ESPAÑOL
+    // "Con un año de experiencia en el desarrollo de proyectos personales de Backend, he fortalecido mis habilidades de programación y resolución de problemas. Mi proyecto personal más destacado es un e-commerce que desarrollé durante mi curso de ‘Programación Backend’ en CODERHOUSE. Además, he adquirido competencias en desarrollo Frontend a través de cursos en freeCodeCamp y aprendizaje autodidacta, lo que me permite tener una visión integral del desarrollo web. Mi enfoque constante en el aprendizaje y la mejora me ha llevado a explorar nuevas tecnologías y a asumir desafíos complejos en mis proyectos.",
+    // VERSIONES ANTERIORES
+    // "Con un año de experiencia en el desarrollo de proyectos personales de backend, he adquirido una sólida base en la programación y la resolución de problemas. Mi proyecto más destacado es un e-commerce completo, que desarrollé durante mi participación en el curso de ‘Programación Backend’ impartido por Coder House, permitiendome aplicar y profundizar en diversas tecnologías y conceptos. Además de mis habilidades de backend, también he adquirido competencias en el desarrollo frontend a través de cursos certificados por Free Code Camp y mi aprendizaje autodidacta. Esto me ha permitido tener una visión completa del desarrollo web, comprendiendo tanto la lógica del servidor como la experiencia del usuario.Mi enfoque siempre ha sido el aprendizaje continuo y la mejora constante, lo que me ha llevado a explorar nuevas tecnologías y a enfrentarme a desafíos cada vez más complejos en mis proyectos personales.",
+    // "Con un año de experiencia en el desarrollo de proyectos personales de backend, he adquirido una sólida base en la programación y la resolución de problemas. Mi proyecto más destacado es un e-commerce completo, que desarrollé durante mi participación en el curso de ‘Programación Backend’ impartido por Coder House. Este proyecto me permitió aplicar y profundizar en diversas tecnologías y conceptos de backend, como bases de datos, APIs, y seguridad.Además de mis habilidades de backend, también he adquirido competencias en el desarrollo frontend a través de cursos certificados por Free Code Camp y mi aprendizaje autodidacta. Esto me ha permitido tener una visión completa del desarrollo web, comprendiendo tanto la lógica del servidor como la experiencia del usuario.Mi enfoque siempre ha sido el aprendizaje continuo y la mejora constante, lo que me ha llevado a explorar nuevas tecnologías y a enfrentarme a desafíos cada vez más complejos en mis proyectos personales. Estoy emocionado de llevar estas habilidades y esta pasión al mundo profesional."
+  },
+  {
+    date: "Sep 2022 - Present",
+    title: "Cost and process analyst",
+    company: "Indave S.A.",
+    description:
+      // ENGLISH VERSION
+      "In charge of calculating and analyzing the costs of the final product (spherical valves destined for the Gas & Oil industry), as well as its direct and indirect production costs.",
+      // VERSION ESPAÑOL
+      // "Encargado del calculo y analisis de costos del producto final (Valvulas esfericas destiandas a la industria de Gas & Oil), asi como tambien sus costos directos e indirectos de produccion.",
+    link: "https://linkedin.com/in/lucianoalessi"
+  },
+  {
+    date: "Apr 2021 - Sep 2022",
+    title: "Sales Engineer",
+    company: "Tecnologia integral S.A.",
+    description:
+      // ENGLISH VERSION
+      "Preparation of sales and marketing plans for Atlas Copco industrial equipment adapted to the needs of the client, managing the entire sales and after-sales process.",
+      // VERSION ESPAÑOL
+      //"Confección de planes de venta y comercialización de equipos industriales de Atlas Copco adaptados a las necesidades del cliente, gestionando todo el proceso de venta y post-venta.",
+      // "Confección de planes de venta y comercialización de equipos industriales de Atlas Copco adaptados a las necesidades del cliente, gestionando todo el proceso de venta y post-venta. También me he desempeñado en la realización de auditorías de aire comprimido para cumplir con la norma ISO 8573.",
+    link: "https://linkedin.com/in/lucianoalessi"
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>
