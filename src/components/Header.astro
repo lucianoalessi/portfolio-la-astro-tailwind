@@ -1,6 +1,8 @@
 ---
+import ThemeToggle from "./ThemeToggle.astro"
+
 const navItems = [
-  {
+{
     title: "Experience",
     label: "experiencia",
     url: "/#experiencia",
@@ -36,11 +38,13 @@ const navItems = [
 <header
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
-  <nav class="flex px-3 text-sm font-medium rounded-full text-gray-200">
+  <nav
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center flex-wrap"
+  >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          class="relative block px-2 py-0 transition hover:text-yellow-500 dark:hover:text-yellow-400"
           aria-label={link.label}
           href={link.url}
         >
@@ -48,6 +52,7 @@ const navItems = [
         </a>
       ))
     }
+    <ThemeToggle />
   </nav>
 </header>
 
@@ -84,6 +89,10 @@ const navItems = [
     document.onvisibilitychange = () => {
       if (document.visibilityState === "hidden") {
         observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
       }
     }
   })
@@ -98,7 +107,7 @@ const navItems = [
 
   @keyframes nav-shadown {
     to {
-      @apply shadow-lg ring-1 backdrop-blur bg-gray-800/60 ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur bg-gray-300/60 dark:bg-gray-800/60 ring-white/10;
     }
   }
 </style>

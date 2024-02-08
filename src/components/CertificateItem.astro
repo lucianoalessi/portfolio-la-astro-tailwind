@@ -25,8 +25,8 @@ const { date, title, institution, description, link, image } = Astro.props
     <h3 class="mt-2 text-lg font-bold text-gray-800 dark:text-gray-100">
       {title}
     </h3>
-    <h4 class="font-semibold text-base text-white">{institution}</h4>
-    <time class="p-0 m-0 text-sm text-white/80">{date}</time>
+    <h4 class="font-semibold text-base text-gray-600 dark:text-white">{institution}</h4>
+    <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
     <div class="mt-2 text-sm text-gray-700 dark:text-gray-400">{description}</div>
     <footer class="flex items-end justify-start mt-1 gap-x-2">
       <LinkInline href={link}>
