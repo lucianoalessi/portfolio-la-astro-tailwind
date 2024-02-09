@@ -4,6 +4,7 @@ import Badge from "@/components/Badge.astro"
 import GitHubIcon from "@/components/icons/GitHub.astro"
 import LinkedInIcon from "@/components/icons/LinkedIn.astro"
 import MailIcon from "@/components/icons/Mail.astro"
+import DownloadIcon from "@/components/icons/DownloadIcon.astro"
 import SocialPill from "@/components/SocialPill.astro"
 ---
 
@@ -60,7 +61,11 @@ import SocialPill from "@/components/SocialPill.astro"
     </SocialPill>
     <SocialPill href="mailto:lucianoalessi9@hotmail.com">
       <MailIcon class="size-4" />
-      lucianoalessi9@hotmail.com
+      lucianoalessi9@gmail.com
+    </SocialPill>
+    <SocialPill href="/cv/lucianoAlessi-cv2024.pdf" download="Alessi Luciano - CV 2024 DEV.pdf">
+      <DownloadIcon class="size-4" />
+      CV
     </SocialPill>
   </nav>
 </div>
